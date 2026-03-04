@@ -15,8 +15,8 @@ identity:
 # ── Upstream ───────────────────────────────────────────────────────────────────
 upstream:
   - type: "template"
-    repository: "organizational-os/organizational-os-template"
-    url: "https://github.com/organizational-os/organizational-os-template"
+    repository: "luizfernandosg/organizational-os-template"
+    url: "https://github.com/luizfernandosg/organizational-os-template"
     relationship: "extends"
     sync_frequency: "manual"
     remote_name: "org-os"
@@ -29,8 +29,8 @@ peers:
     trust: "full"
     role: "grants-platform"
   - name: "ecosystem-canvas"
-    repo: "organizational-os/ecosystem-canvas"
-    url: "https://github.com/organizational-os/ecosystem-canvas"
+    repo: "luizfernandosg/ecosystem-canvas"
+    url: "https://github.com/luizfernandosg/ecosystem-canvas"
     trust: "full"
     role: "shared-visualization-library"
 
@@ -42,7 +42,7 @@ integrations:
       role: "primary-runtime"
   framework:
     - name: "organizational-os-framework"
-      repo: "organizational-os/organizational-os-framework"
+      repo: "luizfernandosg/organizational-os-framework"
       role: "standards"
 
 # ── Network ───────────────────────────────────────────────────────────────────

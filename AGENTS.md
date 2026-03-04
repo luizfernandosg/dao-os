@@ -230,17 +230,17 @@ This project has comprehensive Cursor AI resources for effective development ass
 
 ## Integration Points
 
-**Upstream**: [organizational-os-template](../organizational-os-template/) — extends with DAO-specific modules
+**Upstream**: [organizational-os-template](https://github.com/luizfernandosg/organizational-os-template) — extends with DAO-specific modules
 
 **Peers** (see `federation.yaml`):
-- [opengrants-os](../opengrants-os/) — grants platform integration
-- [ecosystem-canvas](../ecosystem-canvas/) — shared visualization library
+- [opengrants-os](https://github.com/organizational-os/opengrants-os) — grants platform integration
+- [ecosystem-canvas](https://github.com/luizfernandosg/ecosystem-canvas) — shared visualization library
 
-**Agent runtime**: [openclaw-source](../openclaw-source/) — primary runtime for DAO workspaces
+**Agent runtime**: [openclaw-source](https://github.com/organizational-os/openclaw-source) — primary runtime for DAO workspaces
 
-**Standards**: [organizational-os-framework](../organizational-os-framework/) — EIP-4824, workspace file system
+**Standards**: [organizational-os-framework](https://github.com/luizfernandosg/organizational-os-framework) — EIP-4824, workspace file system
 
-**Cross-repo map**: [ECOSYSTEM-MAP.md](../ECOSYSTEM-MAP.md)
+**Cross-repo map**: [ECOSYSTEM-MAP.md](https://github.com/luizfernandosg/Zettelkasten/blob/main/03%20Libraries/ECOSYSTEM-MAP.md)
 
 ## References
 - Root scripts: `package.json`
