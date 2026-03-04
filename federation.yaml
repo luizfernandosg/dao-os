@@ -23,9 +23,9 @@ upstream:
 
 # ── Peers ─────────────────────────────────────────────────────────────────────
 peers:
-  - name: "opengrants-os"
-    repo: "organizational-os/opengrants-os"
-    url: "https://github.com/organizational-os/opengrants-os"
+  - name: "grants-os"
+    repo: "luizfernandosg/grants-os"
+    url: "https://github.com/luizfernandosg/grants-os"
     trust: "full"
     role: "grants-platform"
   - name: "ecosystem-canvas"

@@ -233,7 +233,7 @@ This project has comprehensive Cursor AI resources for effective development ass
 **Upstream**: [organizational-os-template](https://github.com/luizfernandosg/organizational-os-template) — extends with DAO-specific modules
 
 **Peers** (see `federation.yaml`):
-- [opengrants-os](https://github.com/organizational-os/opengrants-os) — grants platform integration
+- [grants-os](https://github.com/luizfernandosg/grants-os) — grants platform integration
 - [ecosystem-canvas](https://github.com/luizfernandosg/ecosystem-canvas) — shared visualization library
 
 **Agent runtime**: [openclaw-source](https://github.com/organizational-os/openclaw-source) — primary runtime for DAO workspaces
