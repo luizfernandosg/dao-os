@@ -1,0 +1,187 @@
+id: gnosis-safe
+name: Gnosis Safe
+version: 1.0.0
+category: treasury
+description: Multi-signature treasury management with customizable signing thresholds
+
+provider: Safe (formerly Gnosis Safe)
+
+# Visual representation
+icon: https://safe.global/images/safe-logo-green.svg
+color: "#12FF80"
+
+# Integration details
+connectorType: onchain
+
+# Supported networks
+networks:
+  - id: 1
+    name: Ethereum
+    network: mainnet
+    rpcUrl: https://eth.llamarpc.com
+  - id: 10
+    name: Optimism
+    network: optimism
+    rpcUrl: https://mainnet.optimism.io
+  - id: 100
+    name: Gnosis
+    network: gnosis
+    rpcUrl: https://rpc.gnosischain.com
+  - id: 137
+    name: Polygon
+    network: polygon
+    rpcUrl: https://polygon-rpc.com
+  - id: 8453
+    name: Base
+    network: base
+    rpcUrl: https://mainnet.base.org
+  - id: 42161
+    name: Arbitrum
+    network: arbitrum
+    rpcUrl: https://arb1.arbitrum.io/rpc
+
+# API endpoints
+apis:
+  - url: https://safe-transaction-mainnet.safe.global
+    method: GET
+    description: Ethereum Mainnet Safe API
+
+# Smart contracts
+contracts:
+  - address: "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+    chainId: 1
+    description: Safe Proxy Factory v1.3.0
+
+# Configuration schema
+configSchema:
+  type: object
+  required:
+    - signers
+    - threshold
+    - chain
+  properties:
+    signers:
+      type: array
+      items:
+        type: string
+        pattern: "^0x[a-fA-F0-9]{40}$"
+      minItems: 1
+      maxItems: 20
+      uniqueItems: true
+      description: Ethereum addresses of Safe signers
+    threshold:
+      type: integer
+      minimum: 1
+      description: Number of signatures required to execute transactions
+    chain:
+      type: string
+      enum:
+        - ethereum
+        - optimism
+        - gnosis
+        - polygon
+        - base
+        - arbitrum
+      description: Blockchain network for deployment
+    saltNonce:
+      type: string
+      description: Optional salt nonce for deterministic deployment
+      default: "0"
+
+# Default configuration
+defaultConfig:
+  threshold: 2
+  chain: optimism
+  saltNonce: "0"
+
+# Dependencies
+dependencies: []
+
+# Prerequisites
+prerequisites:
+  - type: account
+    description: Must have an Ethereum account with sufficient gas
+    required: true
+  - type: permission
+    description: Deployment permission on target chain
+    required: true
+
+# Standards implemented
+standards:
+  - EIP-4824
+  - EIP-1271
+
+# Integration patterns
+integrations:
+  - targetModule: hats-protocol
+    type: recommended
+    description: Use Hats Protocol to manage signer roles and permissions
+  - targetModule: zodiac-modules
+    type: optional
+    description: Extend Safe functionality with Zodiac modules
+  - targetModule: snapshot-space
+    type: recommended
+    description: Connect governance decisions to treasury actions
+
+# Examples
+examples:
+  - name: 2-of-3 Multisig
+    description: Basic 3 signer Safe with 2 signatures required
+    config:
+      signers:
+        - "0x1234567890123456789012345678901234567890"
+        - "0x2345678901234567890123456789012345678901"
+        - "0x3456789012345678901234567890123456789012"
+      threshold: 2
+      chain: optimism
+    useCases:
+      - Small team treasury
+      - Project funding
+      - Emergency controls
+
+  - name: Core Team Treasury
+    description: 5 member core team with 3-of-5 threshold
+    config:
+      signers:
+        - "0x1111111111111111111111111111111111111111"
+        - "0x2222222222222222222222222222222222222222"
+        - "0x3333333333333333333333333333333333333333"
+        - "0x4444444444444444444444444444444444444444"
+        - "0x5555555555555555555555555555555555555555"
+      threshold: 3
+      chain: ethereum
+    useCases:
+      - DAO main treasury
+      - Large organization funds
+      - Protocol treasury
+
+# Tutorials
+tutorials:
+  - title: Deploy Your First Safe
+    description: Step-by-step guide to deploying a Gnosis Safe
+    estimatedTime: 10
+    steps:
+      - title: Prepare Signer Addresses
+        content: |
+          Collect the Ethereum addresses of all signers who will have control over the Safe.
+          Each signer should be a trusted party with access to their private keys.
+      
+      - title: Choose Threshold
+        content: |
+          Decide how many signatures are required to execute transactions.
+          Common patterns: 1-of-1 (personal), 2-of-3 (small team), 3-of-5 (core team).
+      
+      - title: Select Network
+        content: |
+          Choose the blockchain network where you want to deploy.
+          Consider gas costs and where your DAO operates.
+      
+      - title: Deploy Safe
+        content: |
+          Use the DAO OS composer to configure and deploy your Safe.
+          The deployment will create a new Safe contract with your configuration.
+      
+      - title: Verify Deployment
+        content: |
+          Check the Safe UI or block explorer to verify your Safe was created correctly.
+          Confirm all signers and threshold are set as expected.

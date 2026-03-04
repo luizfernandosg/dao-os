@@ -1,0 +1,68 @@
+# DAO OS — Federation Manifest v3.0
+# DAO-specific implementation layer extending Organizational OS
+
+version: "3.0"
+spec: "organizational-os/3.0"
+
+# ── Identity ──────────────────────────────────────────────────────────────────
+identity:
+  name: "DAO OS"
+  type: "Project"
+  emoji: "🏗️"
+  daoURI: ""
+  description: "Visual DAO design platform with modular on-chain/off-chain integration"
+
+# ── Upstream ───────────────────────────────────────────────────────────────────
+upstream:
+  - type: "template"
+    repository: "organizational-os/organizational-os-template"
+    url: "https://github.com/organizational-os/organizational-os-template"
+    relationship: "extends"
+    sync_frequency: "manual"
+    remote_name: "org-os"
+
+# ── Peers ─────────────────────────────────────────────────────────────────────
+peers:
+  - name: "opengrants-os"
+    repo: "organizational-os/opengrants-os"
+    url: "https://github.com/organizational-os/opengrants-os"
+    trust: "full"
+    role: "grants-platform"
+  - name: "ecosystem-canvas"
+    repo: "organizational-os/ecosystem-canvas"
+    url: "https://github.com/organizational-os/ecosystem-canvas"
+    trust: "full"
+    role: "shared-visualization-library"
+
+# ── Integrations ──────────────────────────────────────────────────────────────
+integrations:
+  agent_runtimes:
+    - name: "openclaw"
+      repo: "organizational-os/openclaw-source"
+      role: "primary-runtime"
+  framework:
+    - name: "organizational-os-framework"
+      repo: "organizational-os/organizational-os-framework"
+      role: "standards"
+
+# ── Network ───────────────────────────────────────────────────────────────────
+network: ""
+hub: ""
+downstream: []
+
+# ── Agent Configuration ────────────────────────────────────────────────────────
+agent:
+  runtime: "none"
+  skills:
+    - safe-treasury
+    - hats-governance
+    - gardens-governance
+    - karma-reputation
+    - eip4824-identity
+  proactive: false
+
+# ── Metadata ─────────────────────────────────────────────────────────────────
+metadata:
+  created: "2026-02-20"
+  last_updated: "2026-02-20"
+  framework_version: "3.0"

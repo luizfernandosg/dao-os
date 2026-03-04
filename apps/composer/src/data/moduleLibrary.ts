@@ -1,0 +1,170 @@
+import type { DAOModule } from '@dao-os/core';
+
+/**
+ * Module Library
+ * 
+ * Registry of all available modules
+ */
+export const moduleLibrary: DAOModule[] = [
+  // Treasury Modules
+  {
+    id: 'gnosis-safe',
+    name: 'Gnosis Safe',
+    category: 'treasury',
+    description: 'Multi-signature treasury management',
+    provider: 'Safe',
+    version: '1.0.0',
+    icon: '🔒',
+    color: '#12FF80',
+    connectorType: 'onchain',
+    networks: [
+      { id: 1, name: 'Ethereum', network: 'mainnet' },
+      { id: 10, name: 'Optimism', network: 'optimism' },
+    ],
+    apis: [],
+    configSchema: {},
+    defaultConfig: {
+      threshold: 2,
+      chain: 'optimism',
+    },
+    dependencies: [],
+    prerequisites: [],
+    documentation: '',
+    examples: [],
+    tutorials: [],
+    standards: ['EIP-4824', 'EIP-1271'],
+    integrations: [],
+  },
+  
+  // Governance Modules (placeholders)
+  {
+    id: 'hats-protocol',
+    name: 'Hats Protocol',
+    category: 'governance',
+    description: 'Roles and permissions management',
+    provider: 'Hats Protocol',
+    version: '1.0.0',
+    icon: '🎩',
+    color: '#FF6B6B',
+    connectorType: 'onchain',
+    networks: [
+      { id: 1, name: 'Ethereum', network: 'mainnet' },
+      { id: 10, name: 'Optimism', network: 'optimism' },
+    ],
+    apis: [],
+    configSchema: {},
+    defaultConfig: {},
+    dependencies: [],
+    prerequisites: [],
+    documentation: '',
+    examples: [],
+    tutorials: [],
+    standards: ['EIP-4824'],
+    integrations: [],
+  },
+
+  // Funding Modules (placeholders)
+  {
+    id: 'opengrants-os',
+    name: 'OpenGrants OS',
+    category: 'funding',
+    description: 'Grants intelligence and management',
+    provider: 'OpenGrants',
+    version: '1.0.0',
+    icon: '💰',
+    color: '#4ECDC4',
+    connectorType: 'api',
+    networks: [],
+    apis: [
+      {
+        url: 'https://api.opengrants.org',
+        method: 'GET',
+      },
+    ],
+    configSchema: {},
+    defaultConfig: {},
+    dependencies: [],
+    prerequisites: [],
+    documentation: '',
+    examples: [],
+    tutorials: [],
+    standards: ['DAOIP-5', 'EIP-4824'],
+    integrations: [],
+  },
+
+  // Identity Modules (placeholders)
+  {
+    id: 'eip-4824',
+    name: 'DAO Identity',
+    category: 'identity',
+    description: 'EIP-4824 DAO registration',
+    provider: 'DAOstar',
+    version: '1.0.0',
+    icon: '🆔',
+    color: '#95E1D3',
+    connectorType: 'onchain',
+    networks: [
+      { id: 1, name: 'Ethereum', network: 'mainnet' },
+    ],
+    apis: [],
+    configSchema: {},
+    defaultConfig: {},
+    dependencies: [],
+    prerequisites: [],
+    documentation: '',
+    examples: [],
+    tutorials: [],
+    standards: ['EIP-4824'],
+    integrations: [],
+  },
+
+  // Coordination Modules (placeholders)
+  {
+    id: 'organizational-os',
+    name: 'Organizational OS',
+    category: 'coordination',
+    description: 'Operational workspace management',
+    provider: 'Organizational OS',
+    version: '1.0.0',
+    icon: '🤝',
+    color: '#F38181',
+    connectorType: 'manual',
+    networks: [],
+    apis: [],
+    configSchema: {},
+    defaultConfig: {},
+    dependencies: [],
+    prerequisites: [],
+    documentation: '',
+    examples: [],
+    tutorials: [],
+    standards: ['EIP-4824'],
+    integrations: [],
+  },
+
+  // DAO2DAO Modules (placeholders)
+  {
+    id: 'proposal-inverter',
+    name: 'Proposal Inverter',
+    category: 'dao2dao',
+    description: 'Co-funding mechanism for DAOs',
+    provider: 'Proposal Inverter',
+    version: '1.0.0',
+    icon: '🔗',
+    color: '#AA96DA',
+    connectorType: 'onchain',
+    networks: [
+      { id: 1, name: 'Ethereum', network: 'mainnet' },
+    ],
+    apis: [],
+    configSchema: {},
+    defaultConfig: {},
+    dependencies: [],
+    prerequisites: [],
+    documentation: '',
+    examples: [],
+    tutorials: [],
+    standards: [],
+    integrations: [],
+  },
+];

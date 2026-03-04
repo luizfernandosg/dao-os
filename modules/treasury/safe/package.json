@@ -1,0 +1,43 @@
+{
+  "name": "@dao-os/module-safe",
+  "version": "1.0.0",
+  "description": "Gnosis Safe module for DAO OS",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "default": "./dist/components/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@dao-os/core": "workspace:*",
+    "@dao-os/connectors": "workspace:*",
+    "@safe-global/api-kit": "^2.3.0",
+    "@safe-global/protocol-kit": "^3.0.0",
+    "@safe-global/safe-core-sdk-types": "^4.0.0",
+    "ethers": "^6.9.0",
+    "viem": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/node": "^20.10.0",
+    "react": "^18.2.0",
+    "reactflow": "^11.10.0",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "reactflow": "^11.10.0"
+  }
+}

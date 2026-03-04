@@ -1,0 +1,34 @@
+{
+  "name": "@dao-os/composer",
+  "version": "0.1.0",
+  "description": "Visual DAO composer application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@dao-os/core": "workspace:*",
+    "@dao-os/connectors": "workspace:*",
+    "@dao-os/module-safe": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reactflow": "^11.10.4",
+    "framer-motion": "^10.16.0",
+    "zustand": "^4.4.7",
+    "d3": "^7.8.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/d3": "^7.4.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.8",
+    "eslint": "^8.55.0"
+  }
+}

@@ -1,0 +1,96 @@
+# Module Specification Template
+# Copy this file to your module directory and customize
+
+id: your-module-id
+name: Your Module Name
+version: 1.0.0
+category: treasury  # treasury|governance|funding|identity|coordination|dao2dao
+description: Brief description of what this module does
+
+provider: Provider Name
+
+# Visual representation
+icon: ./assets/icon.svg
+color: "#4A90E2"
+
+# Integration details
+connectorType: api  # onchain|api|manual
+
+# Supported networks (if applicable)
+networks:
+  - id: 1
+    name: Ethereum
+    network: mainnet
+  - id: 10
+    name: Optimism
+    network: optimism
+
+# API endpoints (if applicable)
+apis:
+  - url: https://api.example.com/v1
+    method: POST
+    auth:
+      type: bearer
+      config:
+        envVar: YOUR_API_KEY
+
+# Smart contracts (if applicable)
+contracts: []
+
+# Configuration schema (JSON Schema format)
+configSchema:
+  type: object
+  required:
+    - name
+  properties:
+    name:
+      type: string
+      description: Name of the configuration
+    enabled:
+      type: boolean
+      default: true
+      description: Whether the module is enabled
+
+# Default configuration
+defaultConfig:
+  name: "Default Config"
+  enabled: true
+
+# Dependencies on other modules
+dependencies: []
+
+# Prerequisites for deployment
+prerequisites:
+  - type: account
+    description: Requires an Ethereum account
+    required: true
+
+# Standards implemented
+standards: []
+
+# Integration patterns with other modules
+integrations: []
+
+# Examples
+examples:
+  - name: Basic Setup
+    description: Simple configuration example
+    config:
+      name: "Basic Example"
+      enabled: true
+    useCases:
+      - Getting started
+      - Testing
+
+# Tutorials
+tutorials:
+  - title: Quick Start Guide
+    description: Get up and running in 5 minutes
+    estimatedTime: 5
+    steps:
+      - title: Install dependencies
+        content: |
+          Run `pnpm install` to install required dependencies.
+      - title: Configure module
+        content: |
+          Update the configuration in your DAO architecture.
